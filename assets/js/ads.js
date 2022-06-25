@@ -25,7 +25,7 @@
   let divA = document.createElement("div");
   let a = document.createElement("a");
   a.id = "close-fixedban";
-  a.onclick = 'document.getElementById("fixedban").style.display = "none";';
+  a.setAttribute('onclick', 'document.getElementById("fixedban").style.display = "none";');
   a.style = "cursor:pointer";
   let img = document.createElement("img");
   img.src = "https://yess-online.com/close.png";
