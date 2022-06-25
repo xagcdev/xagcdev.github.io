@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AGC Blogspot - Scrape Ribuat Konten Tanpa Ribet</title>
+    <meta name="description" content="template blogger yang berfungsi untuk melakukan
+    scrapping ribuan konten dari domain yang kita targetkan">
+    <meta property="og:site_name" content="XAGC" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="AGC Blogspot - Scrape Ribuat Konten Tanpa Ribet" />
+    <meta property="og:image"
+        content="https://scontent.fsub8-1.fna.fbcdn.net/v/t39.30808-6/272892624_141000228372855_7799132455467978246_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=0QOVjiqhuqkAX_GhOdi&_nc_ht=scontent.fsub8-1.fna&oh=00_AT8ZBzSGdMX2j3Zy97YamQC7TGanrYG_0soSYxjMmAnisw&oe=62BB37CC" />
+    <meta property="og:description" content="template blogger yang berfungsi untuk melakukan
+    scrapping ribuan konten dari domain yang kita targetkan" />
+    <meta property="og:url" content="https://xagcdev.github.com/products/agc-blogspot/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="https://xagcdev.github.io/assets/images/favicon.png" type="image/x-icon">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Raleway", sans-serif
+        }
+    </style>
+</head>
+
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+        <div class="w3-container">
+            <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey"
+                title="close menu">
+                <i class="fa fa-remove"></i>
+            </a>
+            <img src="https://xagcdev.github.io/assets/images/logo.png" style="width:45%;" class="w3-round"><br><br>
+        </div>
+        <div class="w3-bar-block">
+            <a href="/" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i
+                    class="fa fa-th-large fa-fw w3-margin-right"></i>HOME</a>
+            <a href="/products" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i
+                    class="fa fa-shopping-cart fa-fw w3-margin-right"></i>PRODUCTS</a>
+            <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
+                    class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a>
+            <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i
+                    class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
+        </div>
+        <div class="w3-panel w3-large">
+            <i class="fa fa-facebook-official w3-hover-opacity"></i>
+            <i class="fa fa-instagram w3-hover-opacity"></i>
+            <i class="fa fa-snapchat w3-hover-opacity"></i>
+            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+            <i class="fa fa-twitter w3-hover-opacity"></i>
+            <i class="fa fa-linkedin w3-hover-opacity"></i>
+        </div>
+    </nav>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+        title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:300px">
+
+        <!-- Header -->
+        <header id="portfolio">
+            <a href="#"><img src="https://xagcdev.github.io/assets/images/favicon.png" style="width:45px;"
+                    class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+            <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i
+                    class="fa fa-bars"></i></span>
+            <div class="w3-container">
+                <h1><b>AGC Blogspot</b></h1>
+                <div class="w3-section w3-bottombar w3-padding-5"></div>
+            </div>
+        </header>
+
+        <div class="w3-container w3-padding-large" style="margin-bottom:32px">
+            <p>
+                Halo. Kali ini saya akan membagikan sebuah template blogger yang berfungsi untuk melakukan
+                scrapping ribuan konten dari domain yang kita targetkan. Template ini dibangun menggunakan javascript
+                murni dan rest api bypass origin (dibangun menggunakan nodejs).
+                <br><br>
+                Jadi, perlu saya jelaskan sedikit tentang apa fungsi dan tujuan dibuatnya template blogger ini.
+            </p>
+            <p style="text-align: center;">
+                <img src="https://scontent.fsub8-1.fna.fbcdn.net/v/t39.30808-6/272892624_141000228372855_7799132455467978246_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_ohc=0QOVjiqhuqkAX_GhOdi&_nc_ht=scontent.fsub8-1.fna&oh=00_AT8ZBzSGdMX2j3Zy97YamQC7TGanrYG_0soSYxjMmAnisw&oe=62BB37CC"
+                    alt="histats">
+            </p>
+            <h3>Fungsi Template</h3>
+            <p>
+                Pernahkan kamu mencari sebuah artikel di google search enggine ?. Lalu ketika kamu mengklik link artikel
+                tersebut maka kontent yang kamu inginkan malah tidak ada dan endingnya kamu dibawa menuju link iklan
+                seperti link adsterra, dll.
+                <br><br>
+                Sebagai contoh, coba kamu cari beberapa contoh web agc berikut ini di pencarian google dengan kata kunci
+                pencarian sebagai berikut :
+                <br>
+            <ul>
+                <li>
+                    <a href="https://www.google.com/search?q=site%3Aagcblogspotin.blogspot.com" target="_blank">
+                        site : agcblogspotin.blogspot.com
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.google.com/search?q=site%3Aniwsnovidades2018.blogspot.com" target="_blank">
+                        site : niwsnovidades2018.blogspot.com
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.google.com/search?q=site%3Aplimbareprinploaie.blogspot.com" target="_blank">
+                        site : plimbareprinploaie.blogspot.com
+                    </a>
+                </li>
+            </ul>
+            Mungkin cukup saya bagikan 3 contoh web agc. Sebenarnya masih banyak lagi.
+            <br><br>
+            Lanjut, ketika kamu klik link artikelnya di pencarian google, maka kamu akan di alihkan menuju link tertentu
+            seperti yang saya sebutkan sebelumnya yaitu kamu akan di alihkan menuju link iklan seperti link adsterra,
+            dll.
+            <br><br>
+            Nah, yang jadi pertanyaan, kenapa link-link tersebut bisa terindex google ? dan muncul di top 10 pencarian
+            google. Cara kerjanya akan saya bahas di bawah. Sebelum masuk ke system cara kerjanya, saya akan menjelaskan
+            sedikit manfaat menggunakan Web AGC ini.
+            </p>
+
+            <h3>Manfaat Web Agc</h3>
+            <p>
+                Apa itu web AGC ?. Web AGC adalah singkatan dari Auto Generate Content. Web AGC bekerja dengan cara
+                mengkloning isi web ( baik itu artikel, halaman static, dan lain-lain ) secara otomatis.
+                <br><br>
+                Kenapa saya bilang otomatis ?. Karena ketika pemilik website melakukan update artikel, maka artikel yang
+                ada di web agc juga ikut update.
+                <br><br>
+                Nah, terus apa manfaatnya buat saya ? Manfaatnya banyak mas.. sumpah beneran kagak bohong..wkwkwk
+                <br><br>
+                Nih saya kasih beberapa contoh kasus.
+            </p>
+            <h4>Contoh Kasus 1</h4>
+            <p>
+                Misalkan ada seorang manusia bernama BUDI. Nah, si budi ini memiliki sebuah website katakanlah nama
+                websitenya "www.budi.com". Lalu website si budi ini terdapat iklan adsen. Namun, web si budi tidak
+                memiliki menunggu 1 tahun agar bisa cair atau gajian dari adsen. wkwkk.
+                <br><br>
+                Nah, untuk mengatasi hal tersebut, Budi membuat 20 web AGC. per web AGC yang budi buat, mendapatkan 100
+                trafik/hari. Maka dengan 20 web AGC, maka budi mendapatkan :
+                <br><br>
+                20 x 100 trafik/hari = 2000 trafik/hari.
+                <br><br>
+                Lalu, budi melakukan redirect (pengalihan url) menuju webnya yaitu "www.budi.com". Sehingga web si budi
+                mendapatkan trafik 2000 trafik/hari. Nah, akhirnya si budi bisa gajian tiap bulan dari adsen.
+                <br><br>
+                Belum sampai disitu, budi membuat lagi ratusan web AGC yang tergetnya adalah web BULE (CPC besar). Nah,
+                apa
+                yang terjadi ?. silahkan kamu teruskan endingnya...hehe.
+            </p>
+            <h4>Contoh Kasus 2</h4>
+            <p>Masih dengan BUDI. Kali ini budi ingin menambah pundi-pundi dolar dengan bermain web CPA. Apa itu web CPA
+                ?. CPA singkatan dari Cost Per Action. Artinya budi akan mendapatkan bayaran dari penyedia link CPA jika
+                ada pengunjung yang melakukan aksi ketika link CPA tersebut dikunjungi.</p>
+
+            <p>Nah, bagaimana caranya agar budi mendapatkan pengunjung??. TERNYATA pengunjung tersebut di alihkan menuju
+                link CPA. Lihat apa yang dilakukan budi berikut ini.</p>
+
+            <p>Budi membuat 20 web agc. Dimana web yang ditargetkan budi adalah web yang memiliki rate bayaran besar,
+                katakanlah budi melakukan agc terhadap web luar negeri (singapura, usa, dll). Setelah budi mendapatkan
+                trafik di semua web agc-nya, maka budi melakukan redirect menuju link CPA tersebut. Sebulan kemudian
+                budi membuat lagi 50 web agc dan hal ini dilakukan budi terus menerus setiap bulan. Bagaimana
+                kelanjutanya ? silahkan kamu teruskan..wkwk.</p>
+
+            <h4>Contoh Kasus 3</h4>
+            <p>Masih dengan BUDI. akhirnya budi telah memiliki 500 web agc, dimana kini budi telah memiliki total trafik
+                sebanyak 100.000 trafik/hari. Kini budi membuka jasa "JUAL TRAFIK" dengan harga 100 ribu per bulan
+                dengan
+                trafik per harinya yaitu 1000 trafik. Berapakah pendapatan budi ?. silahkan hitung sendiri...wkwk</p>
+
+            <p>Nah, mungkin itu 3 contoh kasus yang bisa kamu ambil manfaatnya. Sebenarnya banyak contoh kasus lain
+                seperti
+                promosi website, dll.</p>
+
+            <p>Selanjutnya saya akan menjelaskan bagaimana system kerja web AGC ini.</p>
+
+            <h3>System Kerja WEB AGC</h3>
+            <p>
+                Cara kerja web AGC yang saya desain ini adalah seperti berikut :
+            <ol>
+                <li>Tentukan Target Domain yang ingin kita AGC.</li>
+                <li>Masukkan di settingan template ( lihat dokumentasi pemakaiannya di bawah).</li>
+                <li>Daftarkan web AGC ke GSC (Google Searc Console).</li>
+                <li>Tunggu sampai semua artikel terindex.</li>
+                <li>Jika telah mendapatkan trafik yang cukup, lakukan redirect dengan mengaktifkan fitur redirect di
+                    settingan templatenya (lihat dokumentas cara mengaktifkan redirectnya di bawah).</li>
+                <li>Selesai.</li>
+            </ol>
+            </p>
+            <h3>Demo Web AGC</h3>
+            <p>
+                Dan dengan fitur terbaru yaitu sudah ada AUTO SPINTEXT ARTICLE nya tinggal on/off saja di script agc.
+                support bahasa indonesia dan bahasa inggris. dengan adanya fitur spintext maka artikel blog agc menjadi
+                lebih unik.
+            <div style="text-align: center;">
+                <a href="https://xagcblogspot.blogspot.com" target="_blank">
+                    <h4>DEMO TAMPILAN HOME <span style="color: red;">(NEW)</span></h4>
+                </a>
+                <a href="https://xagcblogspot.blogspot.com/?gen" target="_blank">
+                    <h4>DEMO GENERATE TARGET DOMAIN <span style="color: red;">(NEW)</span></h4>
+                </a>
+            </div>
+            </p>
+
+            <p>
+                Perlu kamu ketahui, di dalam web agc ini saya masukkan banyak domain yang saya taget. Selain itu juga
+                kamu bisa menambah target domain yang ingin di agc tanpa batas (silahkan baca dokumentasi fitur dan
+                pemakaian di bawah).
+            </p>
+            <p>
+            <div style="color: red;">Jika kamu adalah pemilik dari domain yang saya targetkan tersebut, silahkan hubungi
+                saya agar segera
+                saya hapus.</div>
+            </p>
+            <h3>Fitur Template Web AGC</h3>
+            <p>
+            <ol>
+                <li>Unlimited Target Domain.</li>
+                <li>Mengubah seluruh isi link artikel menjadi link domain web agc kita.</li>
+                <li>Terindex GSC.</li>
+                <li>Gak ribet harus scrape satu persatu artikel target.</li>
+                <li>Fitur Redirect Url.</li>
+                <li>Auto spin artikel.</li>
+                <li>Bisa pasang iklan.</li>
+            </ol>
+            </p>
+            <h3>Dokumentasi Konfigurasi Template</h3>
+            <h3>Cara Menambah Target Domain Yang ingin Di AGC</h3>
+            <p>
+                Untuk menambah target domain yang ingin di AGC, silahkan ikuti panduan berikut :
+                <br>
+                1. Buka panel "GENERATE CONTENT" dengan cara menambahkan Kode ini di akhir link :
+                <br>
+            <div style="background-color: black; color: white;">https://alamat.blogspot.com<span
+                    style="color: yellow;">/?gen</span></div>
+            </p>
+
+            <p>
+                2. Setelah itu, coba kamu kunjungi. maka tampilannya akan menjadi seperti berikut :
+                <br>
+                <img
+                    src="https://2.bp.blogspot.com/-eAYHrg9zAgk/YBksnQTdU7I/AAAAAAAAAqM/Nr6KvMUtQPMEPmL73c1BE62ouyXc8N4nQCLcBGAsYHQ/w640-h341/Tampilan%2Bgenerate%2B.jpg">
+            </p>
+            <p>
+                3. Silahkan masukkan target domain di kolom input lalu tekan tombol "Generate". Tampilannya akan menjadi
+                seperi berikut :
+                <br>
+                <img
+                    src="https://2.bp.blogspot.com/-LG4kdcIELl4/YBkucq0HfmI/AAAAAAAAAqY/1baTqdmDknA4BgnX0nCM4P-vKklSvtAoQCLcBGAsYHQ/w640-h397/Hasil%2BGenerate%2BWeb%2BAgc.jpg">
+                <br><br>
+                Perlu kamu ketahui, hasil generate yang dihasilkan ada 2 jenis yaitu :
+            <ol>
+                <li>Output Preview Link yang berfungsi untuk melihat hasil tampilan dari web yang kita AGC. </li>
+                <li>Output Setting adalah Kode settingan yang akan kita gunakan nantinya.</li>
+            </ol>
+            </p>
+            <p>
+                4. Silahkan copy code "Output SETTING" yang dihasilkan dengan menekan tombol "Copy Setting".
+            </p>
+            <p>
+                5. Silahkan buat "Postingan Baru" dengan judul terserah kamu lalu isi artikelnya dengan kode "Output
+                SETTING" yang kamu buat sebelumnya. Jika bingung silahkan lihat gambar di bawah.
+                <br>
+                <img
+                    src="https://2.bp.blogspot.com/-KwZEj9EmDs4/YBky0tQEPqI/AAAAAAAAAqk/O-PssIMDk3syq1I5k6zMDMjoFUHC46xhwCLcBGAsYHQ/w640-h296/Panduan%2BMenambah%2BTarget%2BDomain%2BWeb%2BAGC%2B.jpg">
+            </p>
+            <p>
+                6. Selesai. Silahkan Lihat Hasilnya.
+            </p>
+            <p style="color: red;">
+                Tambahan : Pada saat kamu melakukan "Generate Konten", kamu juga bisa menginputkan link artikel konten.
+                Jadi kamu hanya menargetkan AGC untuk 1 artikel doang
+            </p>
+            <h3>Cara Mengaktifkan Fitur Redirect</h3>
+            <p>
+                Perlu kamu ketahui, fitur ini sebaiknya kamu aktifkan ketika web AGC kamu telah terindex di google.
+                <br><br>
+                Jika kamu ingin mengaktifkan fitur ini, silahkan ikuti panduan berikut :
+            <ol>
+                <li>Buka dashboard blogger kamu.</li>
+                <li>Pilih menu "tema" lalu klik tombol "sesuaikan".</li>
+                <li>Selanjutnya klik "Edit HTML".</li>
+                <li>Cari kode berikut : <br>
+                    <div style="background-color: black; color: yellow;">
+                        const redirect = "off";<br>
+                        const redirectRandom = "no";<br>
+                        let linkRedirectRandom = ["https://www.bing.com","https://www.youtube.com"];<br>
+                        let linkRedirectOne = "https://www.google.com";<br>
+                    </div>
+                </li>
+                <li>Lalu ubah kode berikut : <br>
+                    <div style="background-color: black; color: yellow;">
+                        const redirect = "off";
+                    </div>
+                </li>
+                <li>Ubah menjadi : <br>
+                    <div style="background-color: black; color: yellow;">
+                        const redirect = "on";
+                    </div>
+                </li>
+                <li>Klik icon "save" yang berada di pojok kanan atas untuk menyimpan.</li>
+                <li>Selesai.</li>
+            </ol>
+            </p>
+            <p style="color: red;">Catatan : Setelah kamu mengaktifkan fitur redirect url ini, kamu harus menentukan
+                apakah tipe redirectnya random atau hanya satu url. Apa perbedaannya ? silahkan baca settingan
+                selanjutnya dibawah ini.</p>
+            <h3>Cara Redirect Random Url</h3>
+            <p>
+                Fitur ini berfungsi untuk melakukan redirect secara random. Berikut ini settingannya :
+            <ol>
+                <li>Buka dashboard blogger kamu.</li>
+                <li>Pilih menu "tema" lalu klik tombol "sesuaikan".</li>
+                <li>Selanjutnya klik "Edit HTML".</li>
+                <li>Cari kode berikut : <br>
+                    <div style="background-color: black; color: yellow;">const redirectRandom = "no";</div>
+                </li>
+                <li>Ubah menjadi : <br>
+                    <div style="background-color: black; color: yellow;">const redirectRandom = "yes";</div>
+                </li>
+                <li>Lalu cari kode berikut : <br>
+                    <div style="background-color: black; color: yellow;">let linkRedirectRandom =
+                        ["<span style="color: greenyellow;">https://www.bing.com</span>","<span
+                            style="color: greenyellow;">https://www.youtube.com</span>"];
+                    </div>
+                </li>
+                <li>Silahkan ubah link yang saya beri warna hijau dengan link yang ingin kamu redirect.</li>
+                <li>Klik icon "save" yang berada di pojok kanan atas untuk menyimpan.</li>
+                <li>Selesai.</li>
+            </ol>
+            </p>
+            <p style="color: red;">Catatan : Link yang kamu ganti harus mengandung "http://" atau "https://"</p>
+
+            <h3>Cara Redirect 1 Url</h3>
+            <p>
+                Fitur ini berfungsi untuk melakukan redirect ke 1 url. Berikut ini settingannya :
+            <ol>
+                <li>Buka dashboard blogger kamu.</li>
+                <li>Pilih menu "tema" lalu klik tombol "sesuaikan".</li>
+                <li>Selanjutnya klik "Edit HTML".</li>
+                <li>Cari kode berikut : <br>
+                    <div style="background-color: black; color: yellow;">const redirectRandom = "yes";</div>
+                </li>
+                <li>Ubah menjadi : <br>
+                    <div style="background-color: black; color: yellow;">const redirectRandom = "no";</div>
+                </li>
+                <li>Lalu cari kode berikut : <br>
+                    <div style="background-color: black; color: yellow;">let linkRedirectOne = "<span
+                            style="color: greenyellow;">https://www.google.com</span>";
+                    </div>
+                </li>
+                <li>Silahkan ubah link yang saya beri warna hijau dengan link yang ingin kamu redirect. </li>
+                <li>Klik icon "save" yang berada di pojok kanan atas untuk menyimpan.</li>
+                <li>Selesai.</li>
+            </ol>
+            </p>
+            <p style="color: red;">Catatan : Link yang kamu ganti harus mengandung "http://" atau "https://"</p>
+
+            <h3>Link Download Template</h3>
+            <p>
+                Silahkan Download Templatenya Disini :
+            <div style="text-align: center;">
+                <a href="/_files/script_agc_blogspot.zip" target="_blank">
+                    <h4>DOWNLOAD TEMPLATE</h4>
+                </a>
+            </div>
+            </p>
+
+            <h3>Contact Aktifasi Template</h3>
+            <p id="contact">
+                Harga License Aktifasi : (Silahkan pm saya )
+                <br><br>
+                Jika sudah aktifasi, maka aktifasi untuk domain berikutnya gratis (Unlimited).
+                <br><br>
+                Hubungi melalui WhatsApp <a
+                    href="https://wa.me/628979907079?text=Bang, mau aktifasi template agc blogspot." target="_blank"
+                    style="text-decoration: none; color: blue; font-weight: bold;">klik disini</a>
+            </p>
+
+        </div>
+
+        <div class="w3-black w3-center w3-padding-24">Powered by <a href="/" title="W3.CSS" target="_blank"
+                class="w3-hover-opacity">XAGC</a></div>
+
+        <!-- End page content -->
+    </div>
+
+    <script>
+        // Script to open and close sidebar
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
